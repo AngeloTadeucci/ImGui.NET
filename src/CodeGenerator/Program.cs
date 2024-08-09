@@ -233,6 +233,10 @@ namespace CodeGenerator
                             }
 
                             string exportedName = overload.ExportedName;
+                            if (exportedName == "igImGui_ImplDX11_Init")
+                            {
+                                exportedName = exportedName;
+                            }
                             if (exportedName.StartsWith("ig"))
                             {
                                 exportedName = exportedName.Substring(2, exportedName.Length - 2);
@@ -292,6 +296,10 @@ namespace CodeGenerator
                     foreach (OverloadDefinition overload in fd.Overloads)
                     {
                         string exportedName = overload.ExportedName;
+                        if (exportedName == "igImGui_ImplDX11_Init")
+                        {
+                            exportedName = exportedName;
+                        }
                         if (exportedName.Contains("~")) { continue; }
                         if (exportedName.Contains("ImVector_")) { continue; }
                         if (exportedName.Contains("ImChunkStream_")) { continue; }
@@ -367,6 +375,10 @@ namespace CodeGenerator
                     foreach (OverloadDefinition overload in fd.Overloads)
                     {
                         string exportedName = overload.ExportedName;
+                        if (exportedName == "igImGui_ImplDX11_Init")
+                        {
+                            exportedName = exportedName;
+                        }
                         if (exportedName.StartsWith("ig"))
                         {
                             exportedName = exportedName.Substring(2, exportedName.Length - 2);

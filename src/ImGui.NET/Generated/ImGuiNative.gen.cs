@@ -1,6 +1,7 @@
 using System;
 using System.Numerics;
 using System.Runtime.InteropServices;
+using Silk.NET.Direct3D11;
 
 namespace ImGuiNET
 {
@@ -326,6 +327,34 @@ namespace ImGuiNET
         public static extern void igImage(IntPtr user_texture_id, Vector2 image_size, Vector2 uv0, Vector2 uv1, Vector4 tint_col, Vector4 border_col);
         [DllImport("cimgui", CallingConvention = CallingConvention.Cdecl)]
         public static extern byte igImageButton(byte* str_id, IntPtr user_texture_id, Vector2 image_size, Vector2 uv0, Vector2 uv1, Vector4 bg_col, Vector4 tint_col);
+        [DllImport("cimgui", CallingConvention = CallingConvention.Cdecl)]
+        public static extern byte igImGui_ImplDX11_CreateDeviceObjects();
+        [DllImport("cimgui", CallingConvention = CallingConvention.Cdecl)]
+        public static extern byte igImGui_ImplDX11_Init(ID3D11Device* device, ID3D11DeviceContext* device_context);
+        [DllImport("cimgui", CallingConvention = CallingConvention.Cdecl)]
+        public static extern void igImGui_ImplDX11_InvalidateDeviceObjects();
+        [DllImport("cimgui", CallingConvention = CallingConvention.Cdecl)]
+        public static extern void igImGui_ImplDX11_NewFrame();
+        [DllImport("cimgui", CallingConvention = CallingConvention.Cdecl)]
+        public static extern void igImGui_ImplDX11_RenderDrawData(ImDrawData* draw_data);
+        [DllImport("cimgui", CallingConvention = CallingConvention.Cdecl)]
+        public static extern void igImGui_ImplDX11_Shutdown();
+        [DllImport("cimgui", CallingConvention = CallingConvention.Cdecl)]
+        public static extern void igImGui_ImplWin32_EnableAlphaCompositing(void* hwnd);
+        [DllImport("cimgui", CallingConvention = CallingConvention.Cdecl)]
+        public static extern void igImGui_ImplWin32_EnableDpiAwareness();
+        [DllImport("cimgui", CallingConvention = CallingConvention.Cdecl)]
+        public static extern float igImGui_ImplWin32_GetDpiScaleForHwnd(void* hwnd);
+        [DllImport("cimgui", CallingConvention = CallingConvention.Cdecl)]
+        public static extern float igImGui_ImplWin32_GetDpiScaleForMonitor(void* monitor);
+        [DllImport("cimgui", CallingConvention = CallingConvention.Cdecl)]
+        public static extern byte igImGui_ImplWin32_Init(void* hwnd);
+        [DllImport("cimgui", CallingConvention = CallingConvention.Cdecl)]
+        public static extern byte igImGui_ImplWin32_InitForOpenGL(void* hwnd);
+        [DllImport("cimgui", CallingConvention = CallingConvention.Cdecl)]
+        public static extern void igImGui_ImplWin32_NewFrame();
+        [DllImport("cimgui", CallingConvention = CallingConvention.Cdecl)]
+        public static extern void igImGui_ImplWin32_Shutdown();
         [DllImport("cimgui", CallingConvention = CallingConvention.Cdecl)]
         public static extern void igIndent(float indent_w);
         [DllImport("cimgui", CallingConvention = CallingConvention.Cdecl)]

@@ -112,6 +112,10 @@ namespace CodeGenerator
                     {
                         friendlyName = "Destroy";
                     }
+                    if (friendlyName == "ImGui_ImplDX11_Init")
+                    {
+                        friendlyName = friendlyName;
+                    }
                     //skip internal functions
                     var typename = val["stname"]?.ToString();
                     if (!string.IsNullOrEmpty(typename))
