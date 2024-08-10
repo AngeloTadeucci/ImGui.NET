@@ -18,7 +18,13 @@ ImGui.NET: A .NET wrapper for the Dear ImGui library.</Description>
     <Version>$(VersionPrefix)</Version>
     <RepositoryUrl>https://github.com/AngeloTadeucci/ImGui.NET</RepositoryUrl>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\..\LICENSE" Pack="true" PackagePath=""/>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Silk.NET.Direct3D11" Version="2.21.0" />
     <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
